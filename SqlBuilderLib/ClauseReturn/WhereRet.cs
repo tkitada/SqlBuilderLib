@@ -16,6 +16,11 @@ namespace SqlBuilderLib.ClauseReturn
             return Util.GroupBy(builder_, args);
         }
 
+        public OrderByRet OrderBy(params string[] args)
+        {
+            return Util.OrderBy(builder_, args);
+        }
+
         public string End()
         {
             return Util.End(builder_);

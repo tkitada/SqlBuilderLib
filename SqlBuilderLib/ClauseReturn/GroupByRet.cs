@@ -11,6 +11,16 @@ namespace SqlBuilderLib.ClauseReturn
             builder_ = builder;
         }
 
+        public HavingRet Having(string condition)
+        {
+            return Util.Having(builder_, condition);
+        }
+
+        public OrderByRet OrderBy(params string[] args)
+        {
+            return Util.OrderBy(builder_, args);
+        }
+
         public string End()
         {
             return Util.End(builder_);

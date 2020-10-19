@@ -2,23 +2,13 @@
 
 namespace SqlBuilderLib.ClauseReturn
 {
-    public class FromRet
+    public class HavingRet
     {
         private readonly StringBuilder builder_;
 
-        public FromRet(StringBuilder builder)
+        public HavingRet(StringBuilder builder)
         {
             builder_ = builder;
-        }
-
-        public WhereRet Where(string condition)
-        {
-            return Util.Where(builder_, condition);
-        }
-
-        public GroupByRet GroupBy(params string[] args)
-        {
-            return Util.GroupBy(builder_, args);
         }
 
         public OrderByRet OrderBy(params string[] args)

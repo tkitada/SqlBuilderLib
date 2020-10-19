@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="ClauseReturn\FromRet.cs" />
     <Compile Include="ClauseReturn\GroupByRet.cs" />
+    <Compile Include="ClauseReturn\HavingRet.cs" />
+    <Compile Include="ClauseReturn\OrderByRet.cs" />
     <Compile Include="Operator.cs" />
     <Compile Include="ClauseReturn\SelectRet.cs" />
     <Compile Include="ClauseReturn\WhereRet.cs" />

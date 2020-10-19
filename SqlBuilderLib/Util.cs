@@ -18,9 +18,9 @@ namespace SqlBuilderLib
             return new FromRet(builder);
         }
 
-        public static WhereRet Where(StringBuilder builder, string arg)
+        public static WhereRet Where(StringBuilder builder, string condition)
         {
-            builder.Append($"WHERE {arg} ");
+            builder.Append($"WHERE {condition} ");
             return new WhereRet(builder);
         }
 
@@ -31,8 +31,22 @@ namespace SqlBuilderLib
             return new GroupByRet(builder);
         }
 
+        public static HavingRet Having(StringBuilder builder, string condition)
+        {
+            builder.Append($"HAVING {condition} ");
+            return new HavingRet(builder);
+        }
+
+        public static OrderByRet OrderBy(StringBuilder builder, params string[] args)
+        {
+            builder.Append($"ORDER BY ");
+            IterateArgs(builder, args);
+            return new OrderByRet(builder);
+        }
+
         public static string End(StringBuilder builder)
         {
+            builder.Append(";");
             var sql = builder.ToString();
             builder.Clear();
             return sql;

@@ -22,5 +22,25 @@
         {
             return $"DISTINCT {arg} ";
         }
+
+        /// <summary>
+        /// "arg Asc"
+        /// </summary>
+        /// <param name="arg"></param>
+        /// <returns></returns>
+        public static string Asc(string arg)
+        {
+            return $"{arg} Asc";
+        }
+
+        /// <summary>
+        /// "arg Desc"
+        /// </summary>
+        /// <param name="arg"></param>
+        /// <returns></returns>
+        public static string Desc(string arg)
+        {
+            return $"{arg} DESC";
+        }
     }
 }
