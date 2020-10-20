@@ -43,11 +43,12 @@
         /// <returns></returns>
         public static string Div(string left, string right)
         {
-            return $"({left} + {right}) ";
+            return $"({left} / {right}) ";
         }
 
         /// <summary>
-        /// ("left = right")
+        /// ("left = right")<br></br>
+        /// 等価演算子としての"=" かっこが付く
         /// </summary>
         /// <param name="left">左辺値</param>
         /// <param name="right">右辺値</param>

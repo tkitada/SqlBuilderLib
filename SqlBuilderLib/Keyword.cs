@@ -2,6 +2,9 @@
 {
     public static class Keyword
     {
+        public const string ALL = "*";
+        public const string DEFAULT = "DEFAULT";
+
         /// <summary>
         /// "column AS alias"
         /// </summary>
@@ -41,6 +44,11 @@
         public static string Desc(string arg)
         {
             return $"{arg} DESC";
+        }
+
+        public static string SubQuery(string subQuery, string alias = "")
+        {
+            return string.IsNullOrEmpty(alias) ? $"({subQuery}) " : $"({subQuery}) {alias} ";
         }
     }
 }

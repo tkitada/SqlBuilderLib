@@ -15,9 +15,9 @@ namespace SqlBuilderLib.ClauseReturn
             builder_ = builder;
         }
 
-        public FromRet From(string arg)
+        public SelectFromRet From(string arg)
         {
-            return Util.From(builder_, arg);
+            return Util.SelectFrom(builder_, arg);
         }
     }
 }

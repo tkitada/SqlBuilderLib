@@ -41,16 +41,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClauseReturn\FromRet.cs" />
+    <Compile Include="ClauseReturn\DeleteFromRet.cs" />
+    <Compile Include="ClauseReturn\DeleteFromWhereRet.cs" />
+    <Compile Include="ClauseReturn\SelectFromRet.cs" />
     <Compile Include="ClauseReturn\GroupByRet.cs" />
     <Compile Include="ClauseReturn\HavingRet.cs" />
+    <Compile Include="ClauseReturn\InsertIntoRet.cs" />
     <Compile Include="ClauseReturn\OrderByRet.cs" />
+    <Compile Include="ClauseReturn\SetRet.cs" />
+    <Compile Include="ClauseReturn\UpdateRet.cs" />
+    <Compile Include="ClauseReturn\UpdateSetWhereRet.cs" />
+    <Compile Include="ClauseReturn\ValuesRet.cs" />
+    <Compile Include="Clauses\Clause.cs" />
+    <Compile Include="Clauses\WhereClause.cs" />
     <Compile Include="Operator.cs" />
     <Compile Include="ClauseReturn\SelectRet.cs" />
-    <Compile Include="ClauseReturn\WhereRet.cs" />
+    <Compile Include="ClauseReturn\SelectFromWhereRet.cs" />
     <Compile Include="Function.cs" />
     <Compile Include="Keyword.cs" />
-    <Compile Include="Simbol.cs" />
     <Compile Include="SqlBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util.cs" />
