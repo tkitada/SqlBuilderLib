@@ -2,13 +2,10 @@
 
 namespace SqlBuilderLib.ClauseReturn
 {
-    public class ValuesRet
+    public class ValuesRet : RetBase
     {
-        private readonly StringBuilder builder_;
-
-        public ValuesRet(StringBuilder builder)
+        public ValuesRet(StringBuilder builder) : base(builder)
         {
-            builder_ = builder;
         }
 
         public string End()

@@ -1,38 +1,34 @@
 ﻿using SqlBuilderLib.ClauseReturn;
-using SqlBuilderLib.Clauses;
 using System.Text;
 
 namespace SqlBuilderLib
 {
-    public class SqlBuilder
+    public static partial class SqlBuilder
     {
-        private readonly StringBuilder builder_ = new StringBuilder();
 
-        public SelectRet Select(params string[] args)
+        public static SelectRet Select(params string[] args)
         {
-            return Util.Select(builder_, args);
+            return Util.Select(new StringBuilder(), args);
         }
 
-        public InsertIntoRet InsertInto(string tableName, params string[] columns)
+        public static SelectDistinctRet SelectDistinct(params string[] args)
         {
-            return Util.InsertInto(builder_, tableName, columns);
+            return Util.SelectDistinct(new StringBuilder(), args);
         }
 
-        public DeleteFromRet DeleteFrom(string tableName)
+        public static InsertIntoRet InsertInto(string tableName, params string[] columns)
         {
-            return Util.DeleteFrom(builder_, tableName);
+            return Util.InsertInto(new StringBuilder(), tableName, columns);
         }
 
-        public UpdateRet Update(string tableName)
+        public static DeleteFromRet DeleteFrom(string tableName)
         {
-            return Util.Update(builder_, tableName);
+            return Util.DeleteFrom(new StringBuilder(), tableName);
         }
 
-        public static WhereClause Where(string condition)
+        public static UpdateRet Update(string tableName)
         {
-            var builder = new StringBuilder();
-            builder.Append($"WHERE {condition} ");
-            return new WhereClause(builder);
+            return Util.Update(new StringBuilder(), tableName);
         }
     }
 }

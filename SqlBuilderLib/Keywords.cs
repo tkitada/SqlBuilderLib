@@ -1,6 +1,6 @@
 ﻿namespace SqlBuilderLib
 {
-    public static class Keyword
+    public static partial class SqlBuilder
     {
         public const string ALL = "*";
         public const string DEFAULT = "DEFAULT";
@@ -14,16 +14,6 @@
         public static string As(string column, string alias)
         {
             return $"{column} AS {alias} ";
-        }
-
-        /// <summary>
-        /// "DISTINCT arg"
-        /// </summary>
-        /// <param name="arg"></param>
-        /// <returns></returns>
-        public static string Distinct(string arg)
-        {
-            return $"DISTINCT {arg} ";
         }
 
         /// <summary>
@@ -44,11 +34,6 @@
         public static string Desc(string arg)
         {
             return $"{arg} DESC";
-        }
-
-        public static string SubQuery(string subQuery, string alias = "")
-        {
-            return string.IsNullOrEmpty(alias) ? $"({subQuery}) " : $"({subQuery}) {alias} ";
         }
     }
 }

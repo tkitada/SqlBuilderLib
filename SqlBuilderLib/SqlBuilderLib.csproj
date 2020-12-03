@@ -43,6 +43,9 @@
   <ItemGroup>
     <Compile Include="ClauseReturn\DeleteFromRet.cs" />
     <Compile Include="ClauseReturn\DeleteFromWhereRet.cs" />
+    <Compile Include="ClauseReturn\InnerJoinRet.cs" />
+    <Compile Include="ClauseReturn\RetBase.cs" />
+    <Compile Include="ClauseReturn\SelectDistinctRet.cs" />
     <Compile Include="ClauseReturn\SelectFromRet.cs" />
     <Compile Include="ClauseReturn\GroupByRet.cs" />
     <Compile Include="ClauseReturn\HavingRet.cs" />
@@ -52,13 +55,11 @@
     <Compile Include="ClauseReturn\UpdateRet.cs" />
     <Compile Include="ClauseReturn\UpdateSetWhereRet.cs" />
     <Compile Include="ClauseReturn\ValuesRet.cs" />
-    <Compile Include="Clauses\Clause.cs" />
-    <Compile Include="Clauses\WhereClause.cs" />
-    <Compile Include="Operator.cs" />
+    <Compile Include="Operators.cs" />
     <Compile Include="ClauseReturn\SelectRet.cs" />
     <Compile Include="ClauseReturn\SelectFromWhereRet.cs" />
-    <Compile Include="Function.cs" />
-    <Compile Include="Keyword.cs" />
+    <Compile Include="Functions.cs" />
+    <Compile Include="Keywords.cs" />
     <Compile Include="SqlBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util.cs" />

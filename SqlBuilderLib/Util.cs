@@ -12,10 +12,25 @@ namespace SqlBuilderLib
             return new SelectRet(builder);
         }
 
-        public static SelectFromRet SelectFrom(StringBuilder builder, string arg)
+        public static SelectDistinctRet SelectDistinct(StringBuilder builder, string[] args)
+        {
+            builder.Append($"SELECT DISTINCT ");
+            EnumerateArgs(builder, args);
+            return new SelectDistinctRet(builder);
+        }
+
+        public static SelectFromRet SelectFrom(StringBuilder builder, string arg, string alias = null)
         {
             builder.Append($"FROM {arg} ");
+            if (!string.IsNullOrEmpty(alias)) builder.Append($"{alias}");
             return new SelectFromRet(builder);
+        }
+
+        public static InnerJoinRet InnerJoin(StringBuilder builder, string tableName, string alias = null)
+        {
+            builder.Append($"INNER JOIN {tableName} ");
+            if (!string.IsNullOrEmpty(alias)) builder.Append($"{alias} ");
+            return new InnerJoinRet(builder);
         }
 
         public static SelectFromWhereRet SelectFromWhere(StringBuilder builder, string condition)
@@ -98,9 +113,14 @@ namespace SqlBuilderLib
 
         public static string End(StringBuilder builder)
         {
-            var sql = builder.ToString();
-            builder.Clear();
-            return sql;
+            return builder.ToString();
+        }
+
+        public static string EndWithBrackets(StringBuilder builder)
+        {
+            builder.Insert(0, "(");
+            builder.Append(")");
+            return builder.ToString();
         }
 
         /// <summary>

@@ -2,13 +2,10 @@
 
 namespace SqlBuilderLib.ClauseReturn
 {
-    public class OrderByRet
+    public class OrderByRet : RetBase
     {
-        private readonly StringBuilder builder_;
-
-        public OrderByRet(StringBuilder builder)
+        public OrderByRet(StringBuilder builder) : base(builder)
         {
-            builder_ = builder;
         }
 
         public string End()

@@ -2,9 +2,9 @@
 
 namespace SqlBuilderLib.ClauseReturn
 {
-    public class SelectRet : RetBase
+    public class SelectDistinctRet : RetBase
     {
-        public SelectRet(StringBuilder builder) : base(builder)
+        public SelectDistinctRet(StringBuilder builder) : base(builder)
         {
         }
 

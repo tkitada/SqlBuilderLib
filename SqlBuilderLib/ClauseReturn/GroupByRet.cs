@@ -2,13 +2,10 @@
 
 namespace SqlBuilderLib.ClauseReturn
 {
-    public class GroupByRet
+    public class GroupByRet : RetBase
     {
-        private readonly StringBuilder builder_;
-
-        public GroupByRet(StringBuilder builder)
+        public GroupByRet(StringBuilder builder) : base(builder)
         {
-            builder_ = builder;
         }
 
         public HavingRet Having(string condition)
@@ -24,6 +21,11 @@ namespace SqlBuilderLib.ClauseReturn
         public string End()
         {
             return Util.End(builder_);
+        }
+
+        public string EndWithBrackets()
+        {
+            return Util.EndWithBrackets(builder_);
         }
     }
 }

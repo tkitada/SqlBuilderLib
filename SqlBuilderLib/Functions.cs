@@ -1,6 +1,6 @@
 ﻿namespace SqlBuilderLib
 {
-    public static class Function
+    public static partial class SqlBuilder
     {
         /// <summary>
         /// "COUNT(arg)"

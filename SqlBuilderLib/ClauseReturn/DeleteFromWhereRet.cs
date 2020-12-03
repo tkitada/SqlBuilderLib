@@ -2,13 +2,11 @@
 
 namespace SqlBuilderLib.ClauseReturn
 {
-    public class DeleteFromWhereRet
+    public class DeleteFromWhereRet: RetBase
     {
-        private readonly StringBuilder builder_;
 
-        public DeleteFromWhereRet(StringBuilder builder)
+        public DeleteFromWhereRet(StringBuilder builder):base(builder)
         {
-            builder_ = builder;
         }
 
         public string End()

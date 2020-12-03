@@ -2,13 +2,10 @@
 
 namespace SqlBuilderLib.ClauseReturn
 {
-    public class SelectFromWhereRet
+    public class SelectFromWhereRet : RetBase
     {
-        private readonly StringBuilder builder_;
-
-        public SelectFromWhereRet(StringBuilder builder)
+        public SelectFromWhereRet(StringBuilder builder) : base(builder)
         {
-            builder_ = builder;
         }
 
         public GroupByRet GroupBy(params string[] args)
@@ -24,6 +21,10 @@ namespace SqlBuilderLib.ClauseReturn
         public string End()
         {
             return Util.End(builder_);
+        }
+        public string EndWithBrackets()
+        {
+            return Util.EndWithBrackets(builder_);
         }
     }
 }

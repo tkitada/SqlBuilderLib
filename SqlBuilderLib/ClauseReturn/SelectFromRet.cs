@@ -2,13 +2,15 @@
 
 namespace SqlBuilderLib.ClauseReturn
 {
-    public class SelectFromRet
+    public class SelectFromRet : RetBase
     {
-        private readonly StringBuilder builder_;
-
-        public SelectFromRet(StringBuilder builder)
+        public SelectFromRet(StringBuilder builder) : base(builder)
         {
-            builder_ = builder;
+        }
+
+        public InnerJoinRet InnerJoin(string tableName, string alias = null)
+        {
+            return Util.InnerJoin(builder_, tableName, alias);
         }
 
         public SelectFromWhereRet Where(string condition)
@@ -29,6 +31,10 @@ namespace SqlBuilderLib.ClauseReturn
         public string End()
         {
             return Util.End(builder_);
+        }
+        public string EndWithBrackets()
+        {
+            return Util.EndWithBrackets(builder_);
         }
     }
 }
